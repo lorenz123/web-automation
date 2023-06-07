@@ -18,8 +18,10 @@ public class LoginUtil extends DriverConfig {
     public static void main(String[] args) {
 
         WebDriver chromeConfig = getChromeConfig();
-        
-        clickTheLoginBtn(getDriverWait(chromeConfig));
+        WebDriverWait driverWait = getDriverWait(chromeConfig);
+
+
+        clickTheLoginBtn(driverWait);
 
     }
 
