@@ -18,7 +18,6 @@ public class DriverConfig {
     public static WebDriver getChromeConfig() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
         options.addArguments("--start-maximized");
         WebDriver driverChrome = new ChromeDriver(options);
         driverChrome.get(prodEnv);

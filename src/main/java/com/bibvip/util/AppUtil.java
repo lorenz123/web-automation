@@ -12,7 +12,6 @@ import java.time.Duration;
  * @author ef-LORENZ
  */
 public class AppUtil {
-
     public static final Integer POLLING_TIME = 1;
 
     public static By getBy(String path, ElementType type) {
@@ -34,7 +33,7 @@ public class AppUtil {
 
     public static WebElement getElementWithPolling(WebDriverWait wait, By webElementBy) {
         wait.pollingEvery(Duration.ofSeconds(POLLING_TIME));
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(webElementBy));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElementBy));
         return element;
     }
 }
