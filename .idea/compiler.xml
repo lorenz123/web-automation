@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bibvip-web-automation" />
+        <module name="web-automation" />
       </profile>
     </annotationProcessing>
   </component>
