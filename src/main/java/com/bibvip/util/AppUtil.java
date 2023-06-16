@@ -14,7 +14,7 @@ import java.time.Duration;
 public class AppUtil {
     public static final Integer POLLING_TIME = 1;
 
-    public static By getBy(String path, ElementType type) {
+    public static By getBy(ElementType type, String path, String message, Long sleepTime, String sendKeys) {
         switch (type){
             case ID:
                 return By.id(path);

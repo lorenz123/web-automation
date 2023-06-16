@@ -12,14 +12,15 @@ import java.time.Duration;
  * @author ef-LORENZ
  */
 public class DriverConfig {
-    private final static String prodEnv = "https://www.bibvip.com/en_US";
-    private final static Integer WAITING_TIME = 40;
+    public final static String prodEnv = "https://www.bibvip.com/en_US";
+    public final static Integer WAITING_TIME = 60;
 
     public static WebDriver getChromeConfig() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--incognito");
         WebDriver driverChrome = new ChromeDriver(options);
         driverChrome.get(prodEnv);
         return driverChrome;
