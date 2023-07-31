@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.bibvip.consts.HomeElements.*;
+import static com.bibvip.consts.LoginElements.ERROREMAIL_LOGIN;
 import static com.bibvip.util.AppUtil.getBy;
 import static com.bibvip.util.AppUtil.getElementWithPolling;
 
@@ -29,6 +30,17 @@ public class LoginUtil {
 
     }
 
+    public static void goToLoginEmail(WebDriverWait driverWait){
+        WebElement navLoginBtn = getElementWithPolling(driverWait, getBy(NAV_LOGIN_BTN, ElementType.X_PATH));
+        navLoginBtn.click();
+        WebElement rightBtn = getElementWithPolling(driverWait, getBy(RIGHT_SECTION_BTN, ElementType.CSS_SELECTOR));
+        rightBtn.click();
+    }
+
+    public static String getEmailErrorMsg(WebDriverWait driverWait){
+        WebElement error = getElementWithPolling(driverWait, getBy(ERROREMAIL_LOGIN, ElementType.X_PATH));
+        return error.getText();
+    }
     public static void closeFirstModal(WebDriverWait driverWait){
         WebElement closeBtn = getElementWithPolling(driverWait, getBy(CLOSE_BTN_FIRST_MODAL, ElementType.X_PATH));
         closeBtn.click();
